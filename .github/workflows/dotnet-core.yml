@@ -33,4 +33,9 @@ jobs:
       uses: Azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
+    - name: Create ACI resouce
+      uses: Azure/cli@v1.0.0
+      with:
+        inlineScript: |
+          az container create -g rg-aci-echo -l westeurope -n aci-echo-api --image asizikov/echo-api:latest --cpu 1 --memory 0.5 --dns-name-label echo-api --ip-address Public
       

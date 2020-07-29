@@ -1,4 +1,4 @@
-namespace Echo.Api.Controllers
+namespace Echo.Api
 {
     public class Response
     {

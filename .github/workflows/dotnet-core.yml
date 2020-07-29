@@ -27,5 +27,10 @@ jobs:
         repository: asizikov/echo-api
         tag_with_ref: true
         tag_with_sha: true
-        path: /src/Echo.Api
+        path: src/Echo.Api
         add_git_labels: true
+    - name: Azure CLI Login
+      uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      

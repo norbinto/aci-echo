@@ -1,3 +1,5 @@
+![build-application](https://github.com/asizikov/aci-echo/workflows/build-application/badge.svg)
+
 Build and run docker container: 
 
 `docker build -t local . && docker run -p 80:80 --name echo-api local  `

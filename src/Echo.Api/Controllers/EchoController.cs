@@ -22,9 +22,12 @@ namespace Echo.Api.Controllers
         [HttpGet]
         public Task<Response> Post(string message, CancellationToken token)
         {
+            var from = Environment.GetEnvironmentVariable(Constants.APP_NAME) is null
+                ? string.Empty
+                : $" from {Environment.GetEnvironmentVariable(Constants.APP_NAME)}";
             return Task.FromResult(new Response
                 {
-                    Message = message
+                    Message = $"{message}{from}"
                 }
             );
         }

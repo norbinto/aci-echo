@@ -2,12 +2,12 @@
 
 Build and run docker container: 
 
-`docker build -t local . && docker run -p 80:80 --name echo-api local  `
+`docker build -t local . && docker run -p 8081:80 --name echo-api local  `
 
 Verify that it's up and running:
 
 ```bash
-curl -GET http://localhost/echo\?message\=Hi
+curl -GET http://localhost:8081/echo\?message\=Hi
 {"message":"Hi"}
 ```
 
